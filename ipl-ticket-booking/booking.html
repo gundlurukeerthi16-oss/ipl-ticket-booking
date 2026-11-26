@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Tickets | TATA IPL 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="brand">IPL <span>2026</span></a>
+      <ul>
+        <li><a href="index.html#matches">Matches</a></li>
+        <li><a href="booking.html">Book Ticket</a></li>
+        <li><a href="index.html#bookings">My Bookings</a></li>
+        <li><a href="index.html#guidelines">Guidelines</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="booking">
+    <h1 class="section-title">IPL 2026 Ticket Booking</h1>
+
+    <div class="booking-wrapper">
+      <form id="booking-form" class="booking-form" action="#" method="post">
+        <div class="field">
+          <label for="fullName">Full Name *</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            minlength="3"
+            maxlength="60"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="name@example.com"
+            maxlength="100"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="10-digit mobile number"
+            minlength="10"
+            maxlength="15"
+            pattern="[0-9]{10,15}"
+            title="Enter a valid 10-digit phone number"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="matchSelect">Match Selection *</label>
+          <select id="matchSelect" name="matchSelect" required>
+            <option value="">-- Choose a Match --</option>
+            <option value="RCB vs CSK - M. Chinnaswamy Stadium">RCB vs CSK — M. Chinnaswamy Stadium, Bengaluru</option>
+            <option value="MI vs KKR - Wankhede Stadium">MI vs KKR — Wankhede Stadium, Mumbai</option>
+            <option value="CSK vs MI - M. A. Chidambaram Stadium">CSK vs MI — M. A. Chidambaram Stadium, Chennai</option>
+            <option value="KKR vs RCB - Eden Gardens">KKR vs RCB — Eden Gardens, Kolkata</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="standCategory">Stand Category *</label>
+          <select id="standCategory" name="standCategory" required>
+            <option value="">-- Choose Stand Category --</option>
+            <option value="General Stand">General Stand</option>
+            <option value="Pavilion Terrace">Pavilion Terrace</option>
+            <option value="Club House">Club House</option>
+            <option value="VIP Hospitality Box">VIP Hospitality Box</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="ticketCount">Number of Tickets *</label>
+          <input
+            type="number"
+            id="ticketCount"
+            name="ticketCount"
+            min="1"
+            max="10"
+            value="1"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label>Seating Preference</label>
+          <label><input type="radio" name="seatingPref" value="Together" checked /> Seats Together</label>
+          <label><input type="radio" name="seatingPref" value="Aisle" /> Aisle Access</label>
+        </div>
+
+        <div class="field">
+          <label>Add-ons & Preferences</label>
+          <label><input type="checkbox" name="addons" value="Digital Pass" checked /> Instant E-Ticket / QR Pass</label>
+          <label><input type="checkbox" name="addons" value="Fan Jersey" /> Official Fan Merchandise Combo</label>
+          <label><input type="checkbox" name="terms" required /> I agree to stadium entry & ticket rules *</label>
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">Submit Booking</button>
+          <button type="reset" class="btn btn-secondary">Reset Form</button>
+        </div>
+      </form>
+
+      <aside class="summary-box">
+        <h3>Booking Notes</h3>
+        <div class="summary-line">
+          <span>Max Tickets / Booking</span>
+          <strong>10</strong>
+        </div>
+        <div class="summary-line">
+          <span>Name Length</span>
+          <strong>3–60 chars</strong>
+        </div>
+        <div class="summary-line grand-total">
+          <span>Validation</span>
+          <span>HTML5 Active</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
+<aside id="booking-summary" class="summary-box">
+  <h3>Booking Summary</h3>
+  <div class="summary-line">
+    <span>Match</span>
+    <strong id="summary-match">Not selected</strong>
+  </div>
+  <div class="summary-line">
+    <span>Stand Category</span>
+    <strong id="summary-stand">Not selected</strong>
+  </div>
+  <div class="summary-line">
+    <span>Quantity</span>
+    <strong id="summary-qty">0</strong>
+  </div>
+  <div class="summary-line">
+    <span>Price / Ticket</span>
+    <strong id="summary-unit-price">₹0</strong>
+  </div>
+  <div class="summary-line grand-total">
+    <span>Total Price</span>
+    <strong id="summary-total">₹0</strong>
+  </div>
+</aside>
